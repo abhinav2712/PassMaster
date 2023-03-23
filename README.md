@@ -14,6 +14,8 @@ PassMaster is a password generator app built with React Native that allows you t
 Note: You will need to have Node.js and Expo CLI installed on your machine to run the app.
 
 ## Screenshots: 
+![home](https://user-images.githubusercontent.com/68495520/227243097-76a602a3-317b-4bbf-ad70-0c5d59ee13e3.jpg)
+![pass](https://user-images.githubusercontent.com/68495520/227243132-585fbfcd-f932-4aa5-8a95-782496174f3c.jpg)
 
 
 ## Usage

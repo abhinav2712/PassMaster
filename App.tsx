@@ -46,7 +46,7 @@ setIsPassGenerated(true)
   }
 
   const createPassword = (characters:string,passwordLength:number) =>{
-   
+
     let result =  ''
     for (let i = 0; i < passwordLength; i++) {
     //  const characterIndex=Math.round(Math.random()*characters.length)
@@ -66,12 +66,12 @@ setIsPassGenerated(true)
     setUpperCase(false)
     setNumbers(false)
     setSymbols(false)
-     
+
   }
 
   return (
-   <ScrollView keyboardShouldPersistTaps="handled">
-    <SafeAreaView style={styles.appContainer}>
+   <ScrollView keyboardShouldPersistTaps="handled" style={styles.appContainer}>
+    <SafeAreaView>
       <View style={styles.formContainer}>
         <Text style={styles.title}> 🔒   PassMaster  🔒</Text>
         <Text style={styles.description}>
@@ -79,10 +79,10 @@ setIsPassGenerated(true)
         <Formik
        initialValues={{ passwordLength: ''}}
        validationSchema={PasswordSchema}
-       
+
        onSubmit={values=>{
         console.log(values);
-        generatePasswordString(+values.passwordLength)   
+        generatePasswordString(+values.passwordLength)
        }}
      >
        {({
@@ -100,12 +100,12 @@ setIsPassGenerated(true)
           <View style={styles.inputColumn}>
             <Text style={styles.heading}>Password Length</Text>
              {touched.passwordLength && errors.passwordLength && (
-              
+
               <Text style={styles.errorText}>{errors.passwordLength}</Text>
               )}
 
           </View>
-          
+
           <TextInput
            style={styles.inputStyle}
            value={values.passwordLength}
@@ -115,64 +115,64 @@ setIsPassGenerated(true)
            />
         </View>
         <View style={styles.inputWrapper}>
-        
+
             <Text style={styles.heading}>Include Lowercase Characters</Text>
             <BouncyCheckbox
             disableBuiltInState
             size={20}
             fillColor="#5DA3FA"
-            
+
             iconStyle={{ borderColor: "#5DA3FA" }}
             onPress={() => setLowerCase(!lowerCase)}
             isChecked={lowerCase}
           />
 
-          
+
         </View>
         <View style={styles.inputWrapper}>
-        
+
             <Text style={styles.heading}>Include Uppercase Characters</Text>
             <BouncyCheckbox
             disableBuiltInState
             size={20}
             fillColor="#5DA3FA"
-            
+
             iconStyle={{ borderColor: "#5DA3FA" }}
             onPress={() => setUpperCase(!upperCase)}
             isChecked={upperCase}
           />
 
-          
+
         </View>
         <View style={styles.inputWrapper}>
-        
+
             <Text style={styles.heading}>Include Numbers</Text>
             <BouncyCheckbox
             disableBuiltInState
             size={20}
             fillColor="#5DA3FA"
-            
+
             iconStyle={{ borderColor: "#5DA3FA" }}
             onPress={() => setNumbers(!numbers)}
             isChecked={numbers}
           />
 
-          
+
         </View>
         <View style={styles.inputWrapper}>
-        
+
             <Text style={styles.heading}>Include Symbols</Text>
             <BouncyCheckbox
             disableBuiltInState
             size={20}
             fillColor="#5DA3FA"
-            
+
             iconStyle={{ borderColor: "#5DA3FA" }}
             onPress={() => setSymbols(!symbols)}
             isChecked={symbols}
           />
 
-          
+
         </View>
         <View style={styles.inputWrapper}></View>
         <View style={styles.inputWrapper}></View>
@@ -184,7 +184,7 @@ setIsPassGenerated(true)
           style={styles.primaryBtn}
           onPress={handleSubmit}
           >
-            <Text style={styles.primaryBtnTxt}>Generate a Password</Text> 
+            <Text style={styles.primaryBtnTxt}>Generate a Password</Text>
           </TouchableOpacity>
           <TouchableOpacity
           style={styles.secondaryBtn}
@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginHorizontal: -3,
     backgroundColor: '#1a6aed',
-    
+
   },
   primaryBtnTxt: {
     color: '#fff',
